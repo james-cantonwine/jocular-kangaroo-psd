@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
   const simulateNightlyUpdate = async () => {
     try {
-      const response = await fetch('/src/mockStudentData.json');
+      const response = await fetch('/assets/mockStudentData.json');
       const data = await response.json();
       setStudents(data.students);
       localStorage.setItem('students', JSON.stringify(data.students));
