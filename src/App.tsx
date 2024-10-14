@@ -33,7 +33,7 @@ const App: React.FC = () => {
     if (storedStudents) {
       setStudents(JSON.parse(storedStudents));
     } else {
-      fetch('/src/mockStudentData.json')
+      fetch('/assets/mockStudentData.json')
         .then(response => response.json())
         .then(data => {
           setStudents(data.students);
