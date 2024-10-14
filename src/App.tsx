@@ -33,7 +33,7 @@ const App: React.FC = () => {
     if (storedStudents) {
       setStudents(JSON.parse(storedStudents));
     } else {
-      fetch('/assets/mockStudentData.json')
+      fetch('./assets/mockStudentData.json')
         .then(response => response.json())
         .then(data => {
           setStudents(data.students);
@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
   const simulateNightlyUpdate = async () => {
     try {
-      const response = await fetch('/assets/mockStudentData.json');
+      const response = await fetch('./assets/mockStudentData.json');
       const data = await response.json();
       setStudents(data.students);
       localStorage.setItem('students', JSON.stringify(data.students));
